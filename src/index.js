@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 // import Flap from './Flap';
 // import IceCream from './IceCream';
-import { Element1, Element2, Element3 } from './MyElements';
+import { Element1, Element2, Welcome, Element4 } from './MyElements';
 
 ReactDOM.render(
   <App />, document.getElementById('root0'));
@@ -29,8 +29,15 @@ ReactDOM.render(
 );
  
 ReactDOM.render(
-  <Element3
+  <Welcome
+  name='Hank'
+  fontsize="large"
   />, 
   document.getElementById('root3')
 );
- 
+
+ReactDOM.render(
+  <Element4
+  />, 
+  document.getElementById('root4')
+);
