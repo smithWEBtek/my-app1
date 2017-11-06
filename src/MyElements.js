@@ -56,41 +56,33 @@ const element2 = (
     </div>
   </div>
 );
-const element3 = (
-  <div>
-    <hr /> 
-    <p>{fullName}</p>
-  </div>
-);
+
+function element3(props){
+  return(
+    <div>
+      <hr /> 
+      <p>{props.firstName} {props.lastName}</p>
+    </div>
+  )
+};
 
 export function Welcome(props) {
-  if(props.fontsize === "large"){
-    return(
-      <div>
-        <hr />
-          <h1>Hello large {props.name.toUpperCase()}</h1>
-        <hr />
-      </div>
-    )
-  } else 
-  if (props.fontsize === "medium"){
-    return(
-      <div>
-        <hr />
-         <h3>Hello medium {props.name}</h3>
-        <hr />
-      </div>
-    )
-  } else 
-  if (props.fontsize === "small"){
-    return(
-      <div>
-        <hr />
-        <h3>Hello small {props.name.toLowerCase()}</h3>
-        <hr />
-      </div>
-    )
-  }
+  return( 
+    <div>
+      <hr />
+        <h3>Hello {props.firstName}, we will have a {props.size} coffee for you.</h3>
+      <hr />
+    </div>
+  )
+};
+
+function CoffeeOrder(props){
+  return (
+    <div>
+      <hr />
+      <p>My name is {props.firstName}, and I'll take a {props.size} coffee, please.</p>
+    </div>
+  )
 };
 
 
@@ -116,13 +108,22 @@ export class Element2 extends Component {
   }
 }
 
+export class Element3 extends Component {
+  render(){
+    return(
+      Welcome(this.props)
+    )  
+  }
+}
+
 export class Element4 extends Component {
   render(){
     return(
       <div>
-        <button>Small</button>
-        <button>Medium</button>
-        <button>Large</button>
+        <hr />
+          <button>Small</button>
+          <button>Medium</button>
+          <button>Large</button>
       </div>
     )  
   }
