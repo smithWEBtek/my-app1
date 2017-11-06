@@ -2,60 +2,68 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-// import Flap from './Flap';
-// import IceCream from './IceCream';
-import { Element1, Element2, Element3, Welcome, Element4 } from './MyElements';
+import { Composing } from './Composing'
+import { Comment } from './Comment'
+import UserCard from './UserCard'
+import {users} from './Arrays';
 
 ReactDOM.render(
-  <App />, document.getElementById('root0'));
-
-// ReactDOM.render(
-//   <Flap />, document.getElementById('root2'));
- 
-// ReactDOM.render(
-//   <IceCream />, document.getElementById('root3'));
- 
-
-ReactDOM.render(
-  <Element1 
+  <App 
   />, 
   document.getElementById('root1')
 );
- 
-ReactDOM.render(
-  <Element2
-  />, 
-  document.getElementById('root2')
-);
 
 ReactDOM.render(
-  <CoffeeOrder
-    firstName='Sara'
-    size="small"
+  <Composing
   />, 
+  document.getElementById('root2')
+); 
+ 
+const comment = {
+  date: new Date(),
+  text: 'I hope you enjoy learning React!',
+  author: {
+    name: 'Hello Kitty',
+    avatarUrl: 'http://placekitten.com/g/64/64'
+  },
+  order: {
+    size: 'medium',
+    food: 'kibbles'
+  }
+};
+
+ReactDOM.render(
+  <Comment
+    date={comment.date}
+    text={comment.text}
+    author={comment.author}
+    order={comment.order}
+    />,
   document.getElementById('root3')
 );
 
+
+const showUser = {
+    firstName: 'Niky',
+    lastName: 'Morgan',
+    favoriteColor: 'Blue',
+    favoriteAnimal: 'Jaguar', 
+    age: '41', 
+    hometown: 'Boston'
+  };
+
 ReactDOM.render(
-  <Element4
-  />, 
+  <UserCard
+    firstName={showUser.firstName}
+    lastName={showUser.lastName}
+    favoriteColor={showUser.favoriteColor}
+    favoriteAnimal={showUser.favoriteAnimal}
+    age={showUser.age}
+    hometown={showUser.hometown}
+    />,
   document.getElementById('root4')
 );
-
-ReactDOM.render(
-  <Element3 
-    firstName='Jacob'
-    lastName='Worthington'
-    size='large'
-  />,
-  document.getElementById('root5')
-)
-
-ReactDOM.render(
-  <Welcome 
-    firstName='Paul'
-    lastName='Jacoby'
-    size='medium'
-  />,
-  document.getElementById('root6')
-)
+ 
+  // document.getElementById('root5')
+ 
+  // document.getElementById('root6')
